@@ -7,6 +7,7 @@ import "element-plus/dist/index.css";
 import { createI18n } from "vue-i18n";
 import messages from "./locale";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import { Analytics } from "@vercel/analytics/react"
 
 const defaultLocale = navigator.language.substring(0, 2) || "en";
 const locale = localStorage.getItem("locale");
