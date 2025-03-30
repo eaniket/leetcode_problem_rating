@@ -7,7 +7,7 @@ import "element-plus/dist/index.css";
 import { createI18n } from "vue-i18n";
 import messages from "./locale";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-import { Analytics } from "@vercel/analytics/react"
+import { inject } from "@vercel/analytics";
 
 const defaultLocale = navigator.language.substring(0, 2) || "en";
 const locale = localStorage.getItem("locale");
@@ -20,4 +20,6 @@ const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
+
+inject();
 app.use(store).use(i18n).use(router).use(elementPlus).mount("#app");
